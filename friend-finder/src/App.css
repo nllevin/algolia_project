@@ -5,6 +5,7 @@ em {
 
 .header {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   min-height: 50px;
   padding: 0.5rem 1rem;
@@ -23,9 +24,9 @@ em {
   font-weight: normal;
 }
 
-.header-title::after {
+.header-subtitle::before {
   content: ' ▸ ';
-  padding: 0 0.5rem;
+  padding-left: 0.5rem;
 }
 
 .header-subtitle {
@@ -57,4 +58,21 @@ em {
 .pagination {
   margin: 2rem auto;
   text-align: center;
+}
+
+.search-results {
+  display: flex;
+}
+
+.ais-Hits {
+  flex: 1;
+}
+
+.map {
+  flex: 1;
+  display: sticky;
+}
+
+.ais-Hits-item {
+  width: 250px;
 }

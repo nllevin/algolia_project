@@ -7,8 +7,15 @@ import {
   Pagination,
   Highlight,
 } from 'react-instantsearch-dom';
+import {
+  GoogleMapsLoader,
+  GeoSearch,
+  Control,
+  Marker,
+} from 'react-instantsearch-dom-maps';
 import PropTypes from 'prop-types';
 import './App.css';
+const { GOOGLE_MAPS_API_KEY } = require("./keys.js");
 
 const searchClient = algoliasearch('5UDDVDO0RB', '5db4d1012a4e490b710a918547c4dfc0');
 
@@ -18,7 +25,7 @@ class App extends Component {
       <div>
         <header className="header">
           <h1 className="header-title">
-            <a href="/">friend-finder</a>
+            <a href="/">FriendFinder</a>
           </h1>
           <p className="header-subtitle">
             using{' '}
@@ -38,7 +45,26 @@ class App extends Component {
                     placeholder: 'Search',
                   }}
                 />
-                <Hits hitComponent={Hit} />
+
+                <div className="search-results">
+                  <Hits hitComponent={Hit} />
+                  <div className="map" style={{ height: 500 }}>
+                    <GoogleMapsLoader apiKey={GOOGLE_MAPS_API_KEY}>
+                      {google => (
+                        <GeoSearch google={google}>
+                          {({ hits }) => (
+                            <div>
+                              <Control />
+                              {hits.map(hit => (
+                                <Marker key={hit.objectID} hit={hit} />
+                              ))}
+                            </div>
+                          )}
+                        </GeoSearch>
+                      )}
+                    </GoogleMapsLoader>
+                  </div>
+                </div>
 
                 <div className="pagination">
                   <Pagination />
