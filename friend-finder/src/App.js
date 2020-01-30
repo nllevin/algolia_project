@@ -93,38 +93,15 @@ class App extends Component {
 }
 
 function Hit(props) {
+  const { hit } = props;
   return (
     <article>
-      <h1>
-        <Highlight attribute="firstname" hit={props.hit} />
-      </h1>
-      <p>
-        <Highlight attribute="lastname" hit={props.hit} />
-      </p>
-      <p>
-        <Highlight attribute="company" hit={props.hit} />
-      </p>
-      <p>
-        <Highlight attribute="address" hit={props.hit} />
-      </p>
-      <p>
-        <Highlight attribute="city" hit={props.hit} />
-      </p>
-      <p>
-        <Highlight attribute="state" hit={props.hit} />
-      </p>
-      <p>
-        <Highlight attribute="zip" hit={props.hit} />
-      </p>
-      <p>
-        <Highlight attribute="phone" hit={props.hit} />
-      </p>
-      <p>
-        <Highlight attribute="email" hit={props.hit} />
-      </p>
-      <p>
-        <Highlight attribute="web" hit={props.hit} />
-      </p>
+      <h1>{hit.firstname} {hit.lastname}</h1>
+      <p>{hit.company}</p>
+      <p className="address">{hit.address}</p>
+      <p className="address-2">{hit.city}, {hit.state}{hit.zip}</p>
+      <p>{hit.phone}</p>
+      <p>{hit.email}</p>
     </article>
   );
 }
