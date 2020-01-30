@@ -5,15 +5,11 @@ import {
   Hits,
   SearchBox,
   Pagination,
-  Highlight,
-  Configure
+  Configure,
+  RefinementList
 } from 'react-instantsearch-dom';
-import {
-  GoogleMapsLoader,
-  GeoSearch,
-  Control,
-  Marker,
-} from 'react-instantsearch-dom-maps';
+import { GoogleMapsLoader } from 'react-instantsearch-dom-maps';
+import Geo from "./Geo.js";
 import PropTypes from 'prop-types';
 import './App.css';
 const { GOOGLE_MAPS_API_KEY } = require("./keys.js");
@@ -40,43 +36,29 @@ class App extends Component {
           <InstantSearch searchClient={searchClient} indexName="geoloc_contacts">
             <Configure
               hitsPerPage={6}
-              getRankingInfo
               aroundLatLngViaIP
-              typoTolerance="min"
             />
             <div className="search-panel">
               <div className="search-panel__results">
                 <SearchBox
                   className="searchbox"
                   translations={{
-                    placeholder: 'Find your friends nearby!',
+                    placeholder: 'Find your friends! Search by name, company or location.',
                   }}
                 />
 
                 <div className="search-results">
                   <Hits hitComponent={Hit} />
-                  <div className="map" style={{ height: 500 }}>
-                    <GoogleMapsLoader apiKey={GOOGLE_MAPS_API_KEY}>
-                      {google => (
-                        <GeoSearch 
-                          google={google}
-                          initialZoom={8}
-                          mapTypeControl={false}
-                          initialPosition={{
-                            lat: 40.7128,
-                            lng: -74.0060
-                          }}
-                        >
-                          {({ hits }) => (
-                            <div>
-                              {hits.map(hit => (
-                                <Marker key={hit.objectID} hit={hit} />
-                              ))}
-                            </div>
-                          )}
-                        </GeoSearch>
-                      )}
-                    </GoogleMapsLoader>
+                  <div className="refinements-and-map">
+                    <div className="map" style={{ height: 500 }}>
+                      <GoogleMapsLoader apiKey={GOOGLE_MAPS_API_KEY}>
+                        {google => <Geo google={google} />}
+                      </GoogleMapsLoader>
+                    </div>
+                    <div className="refinements">
+                      <RefinementList attribute="city" showMore={true} className="refinement" />
+                      <RefinementList attribute="state" showMore={true} className="refinement" />
+                    </div>
                   </div>
                 </div>
 
@@ -99,7 +81,7 @@ function Hit(props) {
       <h1>{hit.firstname} {hit.lastname}</h1>
       <p>{hit.company}</p>
       <p className="address">{hit.address}</p>
-      <p className="address-2">{hit.city}, {hit.state}{hit.zip}</p>
+      <p className="address-2">{hit.city}, {hit.state} {hit.zip}</p>
       <p>{hit.phone}</p>
       <p>{hit.email}</p>
     </article>
