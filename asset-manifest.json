@@ -1,13 +1,13 @@
 {
-  "main.css": "/algolia_project/static/css/main.4fb3358c.chunk.css",
-  "main.js": "/algolia_project/static/js/main.02da64df.chunk.js",
-  "main.js.map": "/algolia_project/static/js/main.02da64df.chunk.js.map",
+  "main.css": "/algolia_project/static/css/main.e4661fb5.chunk.css",
+  "main.js": "/algolia_project/static/js/main.39e11b5c.chunk.js",
+  "main.js.map": "/algolia_project/static/js/main.39e11b5c.chunk.js.map",
   "static/js/1.b60f549a.chunk.js": "/algolia_project/static/js/1.b60f549a.chunk.js",
   "static/js/1.b60f549a.chunk.js.map": "/algolia_project/static/js/1.b60f549a.chunk.js.map",
   "runtime~main.js": "/algolia_project/static/js/runtime~main.1a9dd551.js",
   "runtime~main.js.map": "/algolia_project/static/js/runtime~main.1a9dd551.js.map",
-  "static/css/main.4fb3358c.chunk.css.map": "/algolia_project/static/css/main.4fb3358c.chunk.css.map",
+  "static/css/main.e4661fb5.chunk.css.map": "/algolia_project/static/css/main.e4661fb5.chunk.css.map",
   "index.html": "/algolia_project/index.html",
-  "precache-manifest.b74e24517091c60b2290c761a73c9aea.js": "/algolia_project/precache-manifest.b74e24517091c60b2290c761a73c9aea.js",
+  "precache-manifest.33718cb4979295d33d4faa9533380e2c.js": "/algolia_project/precache-manifest.33718cb4979295d33d4faa9533380e2c.js",
   "service-worker.js": "/algolia_project/service-worker.js"
 }
