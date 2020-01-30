@@ -15,20 +15,20 @@ Cheers, George
 
 Hi George,
 
-These are great questions that will definitely help you to get started, so thanks for reaching out.
+Thanks for reaching out! These are great questions that will definitely help you to get started.
 
-Records and indices are distinct but closely related concepts. Each record represents a single item that could show up in search results, like the movie The Matrix, for example. Records, in turn, are composed of attributes, which are key/value pairs. In this case, the record for The Matrix might include its genre and year of production. When getting started with Algolia, the first task on your end is to convert your data into Records and Attributes.
+Records and indices are distinct but closely related concepts. Each record represents a single item that could show up in search results, like the movie The Matrix, for example. Records, in turn, are composed of attributes, which are key/value pairs. In this case, the record for The Matrix might include its genre and year of production. When getting started with Algolia, the first task on your end is to convert your data into records and attributes.
 
-An index is a collection of records and the data source for all of your searches. Your second task when getting starting is to send your records to an Algolia index using of of Algolia's API Clients or the Dashboard.
+An index is a collection of records. This is the data source for all of your searches. Your second task when getting starting is to send your records to Algolia using one of Algolia's API clients or the Dashboard. At this point, your records will now be an index. Note that you don't need to send all of your data to Algolia--only the data that you want your users to be able to search and to see in results.
 
-As for custom ranking, that's another excellent question. You can think of an Algolia search as having two stages: first, the engine finds records that match a user's query; then, the engine ranks the records so that the best-matched results appear at the top of the list. There are default ranking criteria for relevance, but custom ranking is your opportunity to adapt Algolia to your business. Perhaps you want your customers to see your most popular items based on metrics like sales, views, likes, or ratings; or perhaps you want your users to see your newest merchandise first. The sky's the limit here, so it really does depend on your specific goals.
+As for custom ranking, that's another great question. You can think of an Algolia search as having two stages: first, the engine finds records that match a user's query; then, the engine ranks the records so that the best-matched results appear at the top of the list. There are default ranking criteria for relevance, but custom ranking is your opportunity to adapt Algolia to your business. Perhaps you want your customers to see your most popular items based on metrics like sales, views, likes, or ratings; or perhaps you want your users to see your newest merchandise first. The sky's the limit here, so it really does depend on your specific goals.
 
 I hope these answers are clarifying, but please feel free to be in touch if you have further questions. In addition, here are some resources that you may find helpful:
 
   * [Records and indexing](https://www.algolia.com/doc/guides/sending-and-managing-data/prepare-your-data/#fetching-and-reworking-your-data-for-algolia)
   * [Custom ranking](https://www.algolia.com/doc/guides/managing-results/must-do/custom-ranking/#custom-ranking)
 
-Finally, I'm always happy to schedule a time to speak by phone if that works better for you. Thanks for being a valued customer with Algolia!
+I'm always happy to schedule a time to speak by phone if that works better for you. Thanks for being a valued customer with Algolia!
 
 Best,
 Noah
@@ -47,7 +47,7 @@ Hi Matt,
 
 Thanks for reaching out! I'm sorry to hear that you're unhappy with the new dashboard design, but I'm always happy to receive your feedback and to see what I can do to help.
 
-If you're the kind of developer who avoids the mouse as much as possible, you may prefer to use one of our [API clients](https://www.algolia.com/doc/guides/getting-started/how-algolia-works/in-depth/ecosystem/#api-clients) designed for the most common programming languages and platforms. You can use the API client to do everything that you can do in the Dashboard and more, with greater control.
+If you're the kind of developer who avoids the mouse as much as possible, you may prefer to use one of our [API clients](https://www.algolia.com/doc/guides/getting-started/how-algolia-works/in-depth/ecosystem/#api-clients) designed for the most common programming languages and platforms. You can use the API client to do everything that you can do in the Dashboard and more, with greater control and fewer clicks.
 
 I hope that the API client will better serve your needs, but please feel free to be in touch if you have any further questions or concerns.
 
