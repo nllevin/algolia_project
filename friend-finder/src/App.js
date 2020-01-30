@@ -6,6 +6,7 @@ import {
   SearchBox,
   Pagination,
   Highlight,
+  Configure
 } from 'react-instantsearch-dom';
 import {
   GoogleMapsLoader,
@@ -37,12 +38,18 @@ class App extends Component {
 
         <div className="container">
           <InstantSearch searchClient={searchClient} indexName="geoloc_contacts">
+            <Configure
+              hitsPerPage={6}
+              getRankingInfo
+              aroundLatLngViaIP
+              typoTolerance="min"
+            />
             <div className="search-panel">
               <div className="search-panel__results">
                 <SearchBox
                   className="searchbox"
                   translations={{
-                    placeholder: 'Search',
+                    placeholder: 'Find your friends nearby!',
                   }}
                 />
 
@@ -51,10 +58,17 @@ class App extends Component {
                   <div className="map" style={{ height: 500 }}>
                     <GoogleMapsLoader apiKey={GOOGLE_MAPS_API_KEY}>
                       {google => (
-                        <GeoSearch google={google}>
+                        <GeoSearch 
+                          google={google}
+                          initialZoom={8}
+                          mapTypeControl={false}
+                          initialPosition={{
+                            lat: 40.7128,
+                            lng: -74.0060
+                          }}
+                        >
                           {({ hits }) => (
                             <div>
-                              <Control />
                               {hits.map(hit => (
                                 <Marker key={hit.objectID} hit={hit} />
                               ))}
