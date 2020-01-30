@@ -68,11 +68,24 @@ em {
   flex: 1;
 }
 
-.map {
+.refinements-and-map {
   flex: 1;
-  display: sticky;
 }
 
 .ais-Hits-item {
   width: 250px;
+}
+
+.address {
+  margin-bottom: 6px;
+}
+
+.address-2 {
+  margin-top: 0px;
+}
+
+.refinements {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
 }
