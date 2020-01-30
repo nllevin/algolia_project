@@ -1,0 +1,20 @@
+{
+  "name": "friend-finder",
+  "template": "React InstantSearch",
+  "appId": "5UDDVDO0RB",
+  "apiKey": "5db4d1012a4e490b710a918547c4dfc0",
+  "indexName": "geoloc_contacts",
+  "searchPlaceholder": "Search",
+  "attributesToDisplay": [
+    "firstname",
+    "lastname",
+    "company",
+    "address",
+    "city",
+    "state",
+    "zip",
+    "phone",
+    "email",
+    "web"
+  ]
+}
